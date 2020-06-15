@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Answer Page</title>
+</head>
+<body>
+	<form action="" method="post">
+		{% csrf_token %}
+		<strong>Answer Title: </strong><input type="text" name="title"><br>
+		<strong>Answer: </strong><input type="text" name="ans"><br>
+		<strong>Posted_by: </strong><input type="text" name="posted_by"><br>
+		<input type="submit" >
+	</form>
+</body>
+</html>

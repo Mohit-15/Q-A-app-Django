@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Question Page</title>
+</head>
+<body>
+	<form action="" method="post">
+		{% csrf_token %}
+		<strong>Question Title: </strong><input type="text" name="title"><br>
+		<strong>Question: </strong><input type="text" name="ques"><br>
+		<strong>Posted_by: </strong><input type="text" name="posted_by"><br>
+		<input type="submit" style="float: center">
+	</form>
+</body>
+</html>

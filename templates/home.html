@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+</head>
+<body>
+	<table style="float: right; width: 40%">
+		<tbody>
+			<tr>
+				<td>
+					<p>
+						<img src="{% static 'images/question.jpg' %}" alt="Question mark" style="height: 600px; width: 350px">
+					</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<a href='question'> Add a new Question </a> || <a href='answer'> Answer to Un-answered Question </a>
+	<p><strong>Note:</strong> While answering...Please mention the correct title !!<br> 
+	_____________________________________________________________________________________</p>
+
+	<table style="float: left; width: 50%">
+		<tbody>
+			<tr>
+				<td>
+
+	<ul>
+	{% for que in ques %}
+	<div>
+	<strong><li>{{ que.ques_text }}? >>>  ( Title : {{ que.ques_title }} || Posted By: {{ que.posted_by }} ) </li></strong>
+		{% for an in ans %}
+			{% if que.ques_title == an.ans_title %}
+			<!--<p><strong><li>{{ que.ques_text }}?</li></strong><br>-->
+				{{ an.ans_text }}.     
+				<button><a href="answer"> Update ANSWER </a></button> ( Posted By: {{ an.posted_by }} )<br>
+				<p></p>
+			{% endif %}
+		{% endfor %}
+	</div>
+	{% endfor %}
+	</ul>
+	</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
