@@ -32,11 +32,12 @@
 		{% for an in ans %}
 			{% if que.ques_title == an.ans_title %}
 			<!--<p><strong><li>{{ que.ques_text }}?</li></strong><br>-->
-				{{ an.ans_text }}.     
-				<button><a href="answer"> Update ANSWER </a></button> ( Posted By: {{ an.posted_by }} )<br>
+				<strong> Ans: </strong>{{ an.ans_text }}.   ( Posted By: {{ an.posted_by }} )   
 				<p></p>
 			{% endif %}
 		{% endfor %}
+		<button><a href="answer"> Update ANSWER </a></button><br>
+		<p></p>
 	</div>
 	{% endfor %}
 	</ul>
