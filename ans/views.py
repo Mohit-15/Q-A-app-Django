@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from .models import Question, Answer
+from django.contrib import messages
 
 # Create your views here.
 
@@ -14,12 +15,12 @@ def question(request):
 		title = request.POST['title']							# getting values from template
 		ques = request.POST['ques']
 		posted_by = request.POST['posted_by']
-
 		quest = Question(ques_title = title , ques_text = ques , posted_by = posted_by)   # creating object quest of Question Class 
 		quest.save()																	  # and store the values and save it
 
 		return redirect('/')															  # redirecting to home page
 	else:
+		messages.info(request, "fill out the fields")
 		return render(request, 'question.html')
 
 def answer(request):
@@ -38,4 +39,5 @@ def answer(request):
 
 		return redirect('/')
 	else:
+		messages.info(request, "fill out the fields")
 		return render(request, 'answer.html')
