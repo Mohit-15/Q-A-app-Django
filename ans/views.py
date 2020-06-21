@@ -28,14 +28,14 @@ def answer(request):
 		ans = request.POST['ans']
 		posted_by = request.POST['posted_by']
 
-		if Answer.objects.filter(ans_title = title).exists():							# checking if title already exist in the db
-			azs = Answer.objects.filter(ans_title = title)								# getting object which have same title
-			azs = azs.update(ans_text = ans , posted_by = posted_by)					# updating the object with new values by keeping title as it is
-			return redirect('/')
-		else:
-			anst = Answer(ans_title = title , ans_text = ans , posted_by = posted_by)   # creating a new object of Answer
-			anst.save()
+		#if Answer.objects.filter(ans_title = title).exists():							# checking if title already exist in the db
+			#azs = Answer.objects.filter(ans_title = title)								# getting object which have same title
+			#azs = azs.update(ans_text = ans , posted_by = posted_by)					# updating the object with new values by keeping title as it is
+			#return redirect('/')
+		#else:
+		anst = Answer(ans_title = title , ans_text = ans , posted_by = posted_by)   # creating a new object of Answer
+		anst.save()
 
-			return redirect('/')
+		return redirect('/')
 	else:
 		return render(request, 'answer.html')
