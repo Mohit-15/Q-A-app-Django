@@ -10,6 +10,5 @@ class QuestionAdmin(admin.ModelAdmin):
 	model = Question
 	list_filter = ('ques_title',)
 
-admin.site.register(Question, QuestionAdmin)          # registering the models 
+admin.site.register(Question, QuestionAdmin)          # registering the models
 admin.site.register(Answer, AnswerAdmin)
-

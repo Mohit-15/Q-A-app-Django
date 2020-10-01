@@ -7,7 +7,7 @@ class Question(models.Model):
 	ques_text = models.CharField(max_length= 200)
 	posted_by = models.CharField(max_length= 20)
 
-	def __str__(self):                                  # object name of Question Class 
+	def __str__(self):                                  # object name of Question Class
 		return self.ques_title[:10]						# object name is the question title with 0 to 9th index
 
 class Answer(models.Model):
