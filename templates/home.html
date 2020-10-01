@@ -17,7 +17,7 @@
 		</tbody>
 	</table>
 	<a href='question'> Add a new Question </a> || <a href='answer'> Answer to Un-answered Question </a>
-	<p><strong>Note:</strong> While answering...Please mention the correct title !!<br> 
+	<p><strong>Note:</strong> While answering...Please mention the correct title !!<br>
 	_____________________________________________________________________________________</p>
 
 	<table style="float: left; width: 50%">
@@ -32,7 +32,7 @@
 		{% for an in ans %}
 			{% if que.ques_title == an.ans_title %}
 			<!--<p><strong><li>{{ que.ques_text }}?</li></strong><br>-->
-				<strong> Ans: </strong>{{ an.ans_text }}.   ( Posted By: {{ an.posted_by }} )   
+				<strong> Ans: </strong>{{ an.ans_text }}.   ( Posted By: {{ an.posted_by }} )
 				<p></p>
 			{% endif %}
 		{% endfor %}

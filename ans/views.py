@@ -15,7 +15,7 @@ def question(request):
 		title = request.POST['title']							# getting values from template
 		ques = request.POST['ques']
 		posted_by = request.POST['posted_by']
-		quest = Question(ques_title = title , ques_text = ques , posted_by = posted_by)   # creating object quest of Question Class 
+		quest = Question(ques_title = title , ques_text = ques , posted_by = posted_by)   # creating object quest of Question Class
 		quest.save()																	  # and store the values and save it
 
 		return redirect('/')															  # redirecting to home page
